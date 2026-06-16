@@ -1,0 +1,295 @@
+/* ═══════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════ */
+
+.hero {
+  width: 100%;
+  height: 92vh;
+  min-height: 560px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+/* ── BACKGROUND IMAGE ───────────────────── */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: opacity 0.8s var(--ease), transform 6s ease;
+  transform: scale(1.04);
+}
+
+.hero-bg-img.loaded { transform: scale(1); }
+
+/* ── LAYERED OVERLAY ────────────────────── */
+/* Left: opaque for text legibility → right: transparent */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(27, 67, 50, 0.93) 0%,
+      rgba(27, 67, 50, 0.78) 38%,
+      rgba(27, 67, 50, 0.38) 65%,
+      transparent 100%
+    );
+}
+
+/* Decorative bottom fade */
+.hero-overlay::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(to top, var(--cream), transparent);
+}
+
+/* ── DECORATIVE PATTERN ─────────────────── */
+/* Subtle geometric mandala-inspired element */
+.hero-pattern {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(500px, 45vw);
+  height: min(500px, 45vw);
+  border-radius: 50%;
+  border: 1px solid rgba(224, 123, 0, 0.18);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(224, 123, 0, 0.12);
+}
+
+.hero-pattern::after {
+  content: "";
+  position: absolute;
+  inset: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(224, 123, 0, 0.08);
+}
+
+/* ── CONTENT ────────────────────────────── */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  padding: 0 56px;
+  animation: heroEnter 0.9s var(--ease) both;
+}
+
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* EYEBROW */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--saffron-light);
+  background: rgba(224, 123, 0, 0.18);
+  border: 1px solid rgba(224, 123, 0, 0.3);
+  padding: 5px 14px;
+  border-radius: var(--r-full);
+  margin-bottom: 22px;
+  animation: heroEnter 0.9s 0.1s var(--ease) both;
+}
+
+/* HEADING */
+.hero-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5.5vw, 68px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 20px;
+  animation: heroEnter 0.9s 0.15s var(--ease) both;
+}
+
+.hero-content h1 em {
+  font-style: italic;
+  color: var(--saffron-light);
+}
+
+/* DESCRIPTION */
+.hero-content p {
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 500px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+  animation: heroEnter 0.9s 0.22s var(--ease) both;
+}
+
+/* CTA BUTTONS */
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: heroEnter 0.9s 0.3s var(--ease) both;
+}
+
+.hero-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--saffron);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: var(--r-md);
+  text-decoration: none;
+  font-family: var(--font-body);
+  border: 2px solid var(--saffron);
+  transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease), background var(--t-fast);
+  letter-spacing: 0.01em;
+}
+
+.hero-cta-primary:hover {
+  background: var(--saffron-light);
+  border-color: var(--saffron-light);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(224, 123, 0, 0.4);
+}
+
+.hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: var(--r-md);
+  text-decoration: none;
+  font-family: var(--font-body);
+  border: 2px solid rgba(255,255,255,0.35);
+  transition: border-color var(--t-fast) var(--ease), background var(--t-fast) var(--ease), transform var(--t-fast);
+}
+
+.hero-cta-secondary:hover {
+  border-color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ── SLIDE DOTS ─────────────────────────── */
+.hero-dots {
+  position: absolute;
+  bottom: 52px;
+  left: 56px;
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: width var(--t-med) var(--ease), background var(--t-fast);
+}
+
+.hero-dot.active {
+  width: 28px;
+  background: var(--saffron);
+}
+
+/* ── STATS BAR ──────────────────────────── */
+.hero-stats {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: rgba(27, 67, 50, 0.72);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-stat {
+  padding: 16px 40px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-stat:last-child { border-right: none; }
+
+.hero-stat-value {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--saffron-light);
+  display: block;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.hero-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ── MOBILE ─────────────────────────────── */
+@media (max-width: 768px) {
+  .hero { height: auto; min-height: 100svh; padding-bottom: 80px; }
+  .hero-content { padding: 60px 20px 20px; max-width: 100%; }
+  .hero-pattern { display: none; }
+  .hero-dots { left: 20px; bottom: 90px; }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .hero-stat {
+    flex: 1 1 50%;
+    padding: 14px 20px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-stat:nth-child(2n) { border-right: none; }
+}
+
+@media (max-width: 480px) {
+  .hero-ctas { flex-direction: column; }
+  .hero-cta-primary,
+  .hero-cta-secondary { justify-content: center; }
+}

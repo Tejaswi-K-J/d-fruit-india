@@ -1,0 +1,132 @@
+/* ================= PAGE BACKGROUND (CONTACT ONLY) ================= */
+
+.contact-page {
+  background: linear-gradient(
+    180deg,
+    #f6f3ee 0%,
+    #f3f5f1 60%,
+    #eef5ef 100%
+  );
+  padding: 60px 0 60px;
+}
+
+/* ================= CONTACT CONTAINER ================= */
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px 70px;
+  background: #020617;
+  border-radius: 28px;
+  color: #e5e7eb;
+}
+
+/* ================= HEADER ================= */
+
+.contact-header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  color: #9ca3af;
+  max-width: 600px;
+}
+
+/* ================= GRID ================= */
+
+.contact-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* ================= INFO ================= */
+
+.contact-info {
+  line-height: 1.9;
+}
+
+.contact-info h3 {
+  margin-bottom: 12px;
+}
+
+.contact-note {
+  margin-top: 20px;
+  color: #9ca3af;
+}
+
+/* ================= FORM ================= */
+
+.contact-form-wrapper {
+  background: #0f172a;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+}
+
+.contact-form-wrapper h3 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.contact-form-wrapper input,
+.contact-form-wrapper textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.contact-form-wrapper textarea {
+  resize: none;
+}
+
+.contact-form-wrapper button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #ff7a18, #ff9f45);
+  color: #020617;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.contact-form-wrapper button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 40px 0 50px;
+  }
+
+  .contact-container {
+    margin: 0 16px;
+    padding: 40px 16px 50px;
+    border-radius: 22px;
+  }
+
+  .contact-header h1 {
+    font-size: 26px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-form-wrapper {
+    padding: 22px;
+  }
+}

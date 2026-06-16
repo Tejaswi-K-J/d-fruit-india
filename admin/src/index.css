@@ -1,0 +1,160 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #e5e7eb;
+  background-color: #0f172a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY FIX (IMPORTANT) */
+body {
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #e5e7eb;
+  font-family: inherit;
+}
+
+/* LINKS */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* BUTTONS */
+button {
+  border-radius: 6px;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #1e293b;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #334155;
+}
+
+/* INPUTS */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  background-color: #020617;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #e5e7eb;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+/* HEADINGS */
+h1,
+h2,
+h3,
+h4 {
+  color: #f8fafc;
+}
+
+/* UTILITY */
+.container {
+  padding: 24px;
+}
+
+/* FLUENT-2 INSPIRED ADMIN LAYOUT */
+
+/* Layout */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f6f7;
+  color: #1f2937;
+}
+
+/* Sidebar */
+.admin-sidebar {
+  width: 240px;
+  background-color: #f3f3f3;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
+/* Navigation */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px
+
+
+px;
+}
+
+.nav-link {
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #374151;
+  font-size: 14px;
+  transition: background-color 0.15s ease;
+}
+
+.nav-link:hover {
+  background-color: #e5e7eb;
+}
+
+.nav-link.active {
+  background-color: #e0e7ff;
+  color: #1d4ed8;
+  font-weight: 500;
+}
+
+/* Logout */
+.logout-btn {
+  margin-top: auto;
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.logout-btn:hover {
+  background-color: #fee2e2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+/* Main Content */
+.admin-content {
+  flex: 1;
+  padding: 32px;
+  background-color: #f9fafb;
+}
